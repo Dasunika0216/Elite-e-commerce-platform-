@@ -11,14 +11,14 @@ const Footer = () => {
       </p>
 
       <div className='flex flex-wrap justify-center gap-5 mb-5'>
-        <Link to='/' className='text-gray-600'>Home</Link>
-        <Link to='/about' className='text-gray-600'>About Us</Link>
-        <Link to='/delivery' className='text-gray-600'>Delivery</Link>
-        <Link to='/privacy-policy' className='text-gray-600'>Privacy Policy</Link>
+        <Link to='/' className='text-gray-600'>HOME</Link>
+        <Link to='/collection' className='text-gray-600'>COLLECTION</Link>
+        <Link to='/about' className='text-gray-600'>ABOUT</Link>
+        <Link to='/contact' className='text-gray-600'>CONTACT</Link>
       </div>
 
       <div>
-        <hr />
+      <hr className='border-t-[1px] border-black w-full'/>
         <p className='py-5 text-sm text-center'>© 2025 Elite Clothing - Redefining Style, One Outfit at a Time</p>
       </div>
     </div>
