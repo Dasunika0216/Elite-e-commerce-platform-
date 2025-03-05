@@ -93,7 +93,7 @@ const placeOrderStripe = async (req, res) => {
 }
 
 //Verify stripe payment
-const veriftStripe = async (req, res) => {
+const verifyStripe = async (req, res) => {
     const {orderId, success, userId} = req.body;
 
     try {
@@ -157,4 +157,4 @@ const updateStatus = async (req, res) => {
    }
 }
 
-export { placeOrder, placeOrderStripe, placeOrderRazorpay, allOrders, userOrders, updateStatus };
+export { placeOrder, placeOrderStripe, placeOrderRazorpay, allOrders, userOrders, updateStatus, verifyStripe };
