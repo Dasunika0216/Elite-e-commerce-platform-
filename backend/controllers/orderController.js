@@ -12,8 +12,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 // Placing orders using cash on delivery method
 const placeOrder = async (req, res) => {
     try {
-        const {userId, items, amount, address} = req.body;
-        const orderData = {
+        const {userId, items, amount, address} = req.body;         // userId, items, amount and address are sent in the request body to place the order
+        const orderData = {                                           // Order data is created to save in the database 
             userId,
             items,
             amount,
@@ -117,7 +117,7 @@ const verifyStripe = async (req, res) => {
 // All orders data for Admin panel
 const allOrders = async (req, res) => {
    try {
-    const orders = await orderModel.find({});
+    const orders = await orderModel.find({});     // All orders are fetched from the database
     res.json({success: true, orders});
    } 
    catch (error) {
@@ -130,7 +130,7 @@ const allOrders = async (req, res) => {
 const userOrders = async (req, res) => {
    try {
     const {userId} = req.body;
-    const orders = await orderModel.find({userId});
+    const orders = await orderModel.find({userId});   // Orders of the user are fetched from the database
     res.json({success: true, orders});
    } 
    catch (error) {
@@ -143,7 +143,7 @@ const userOrders = async (req, res) => {
 const updateStatus = async (req, res) => {
    try {
     const {orderId, status} = req.body;
-    await orderModel.findByIdAndUpdate(orderId, {status});
+    await orderModel.findByIdAndUpdate(orderId, {status});       // Order status is updated in the database
     res.json({success: true, message: "Order status updated successfully!"});
    } 
    catch (error) {

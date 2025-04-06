@@ -38,7 +38,7 @@ const loginUser = async (req, res) => {
 // Route for user registration
 const registerUser = async (req, res) => {
     try {
-        const {name, email, password} = req.body;
+        const {name, email, password} = req.body;         // destructuring the request body to get the name, email and password of the user.
 
         //checking if the user already exists or not using the email address.
         const exists = await userModel.findOne({email});
@@ -66,9 +66,9 @@ const registerUser = async (req, res) => {
             password: hashedPassword
         })
 
-        const user = await newUser.save();
+        const user = await newUser.save();      //saving the user to the database 
 
-        const token = createToken(user._id);
+        const token = createToken(user._id);        // creating a token for the user using the user id.
         res.json({success:true, token})
 
     } catch (error) {

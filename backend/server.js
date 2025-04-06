@@ -24,10 +24,12 @@ app.use('/api/product', productRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/order', orderRouter);
 
+// listen 
 app.get('/', (req,res) => {
     res.send("API working");
 })
 
+// listen 
 app.listen(port, () => 
     console.log('Server is running on port '+ port)
 );
