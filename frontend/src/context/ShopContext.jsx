@@ -5,6 +5,7 @@ import axios from 'axios';
 
 export const ShopContext = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 const ShopContextProvider = (props) => {
     const currency = '$';
     const delivery_fee = 10;
@@ -148,11 +149,11 @@ const ShopContextProvider = (props) => {
     const value = {
         products, currency, delivery_fee,
         search, setSearch, showSearch, setShowSearch,
-        cartItems, addToCart, 
+        cartItems, addToCart,
         getCartCount, updateQuantity,
         getCartAmount, navigate,
         backendUrl, token, setToken,
-        cartItems, setCartItems, 
+        setCartItems,
     }
 
     return (

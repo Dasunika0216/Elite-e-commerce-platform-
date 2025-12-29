@@ -30,6 +30,12 @@ app.get('/', (req,res) => {
 })
 
 // listen 
-app.listen(port, () => 
-    console.log('Server is running on port '+ port)
-);
+// app.listen(port, () => 
+//     console.log('Server is running on port '+ port)
+// );
+
+app.get("/api/health", (req, res) => {
+    res.json({ status: "ok" });
+});
+
+export default app;
